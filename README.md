@@ -5,7 +5,10 @@ This is a Visual Studio Code extension that provides support for the [QuickBMS s
 
 ![Example screenshot of the QuickBMS language syntax highlighting](images/syntax_highlighting_example_01.png)
 
-# TODO
+## Development
+This is currently a small hobby project, so any PRs for fixes and improvements are welcome.
+
+## TODO
 These are some potential features that could be implemented in the future:
 
 * Make sure all syntax elements are properly highlighted (current implementation is partial)
