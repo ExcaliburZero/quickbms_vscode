@@ -1,0 +1,25 @@
+{
+    "name": "quickbms",
+    "displayName": "quickbms",
+    "description": "QuickBMS",
+    "version": "0.0.1",
+    "engines": {
+        "vscode": "^1.55.0"
+    },
+    "categories": [
+        "Programming Languages"
+    ],
+    "contributes": {
+        "languages": [{
+            "id": "quickbms",
+            "aliases": ["QuickBMS", "quickbms"],
+            "extensions": [".bms"],
+            "configuration": "./language-configuration.json"
+        }],
+        "grammars": [{
+            "language": "quickbms",
+            "scopeName": "source.quickbms",
+            "path": "./syntaxes/quickbms.tmLanguage.json"
+        }]
+    }
+}

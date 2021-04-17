@@ -1,0 +1,116 @@
+{
+	"$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+	"name": "QuickBMS Scripting Language",
+	"patterns": [
+		{
+			"include": "#comments"
+		},
+		{
+			"include": "#numbers"
+		},
+		{
+			"include": "#operators"
+		},
+		{
+			"include": "#function-definition"
+		},
+		{
+			"include": "#control"
+		},
+		{
+			"include": "#keywords1"
+		},
+		{
+			"include": "#keywords2"
+		},
+		{
+			"include": "#strings"
+		}
+	],
+	"repository": {
+		"comments": {
+			"patterns": [
+				{
+					"begin": "#",
+					"beginCaptures": {
+						"0": {
+							"name": "punctuation.definition.comment.quickbms"
+						}
+					},
+					"end": "\\n",
+					"name": "comment.line.number-sign.quickbms"
+				},
+				{
+					"begin": "//",
+					"beginCaptures": {
+						"0": {
+							"name": "punctuation.definition.comment.quickbms"
+						}
+					},
+					"end": "\\n",
+					"name": "comment.line.double-slash.quickbms"
+				}
+			]
+		},
+		"numbers": {
+			"patterns": [
+				{
+					"name": "constant.numeric.quickbms",
+					"match": "(?i)\\b([0-9]+|0x[0-9,a,b,c,d,e,f]+)\\b"
+				}
+			]
+		},
+		"operators": {
+			"patterns": [
+				{
+					"name": "keyword.operators.quickbms",
+					"match": "(=|\\+|\\*|\\/|-|\\^|<|%|&|\\||$|!|>|!=|==|\\/|<<|>>|!|!!|~|\\+=|\\*=|\\/=|-=|\\^=|<=|%=|&=|\\|=|$=|!=|>=|_=|!==|===|\\/=|<<=|>>=|!=|!!=|~=|u\\+=|u\\*=|u\\/=|u-=|u%=|u<|u<=|u>|u>=|u<<|u<<=|u>>|u>>=)"
+				}
+			]
+		},
+		"function-definition": {
+			"patterns": [
+				{
+					"name": "keyword.other.quickbms",
+					"match": "(?i)\\b(StartFunction|EndFunction)\\b"
+				}
+			]
+		},
+		"control": {
+			"patterns": [
+				{
+					"name": "keyword.control.quickbms",
+					"match": "(?i)\\b(if|elif|else|endif|for|do|break|continue|next|prev|while)\\b"
+				}
+			]
+		},
+		"keywords1": {
+			"patterns": [
+				{
+					"name": "keyword.other.quickbms",
+					"match": "(?i)\\b(QuickBMSver|Clog|FindLoc|Get|GetDString|GoTo|IDString|Log|Math|Open|SavePos|Set|String|CleanExit|GetCT|ComType|ReverseLong|ReverseShort|ReverseLongLong|Endian|FileXOR|FileRot|FileCrypt|Strlen|GetVarChr|PutVarChr|Debug|Padding|Append|Encryption|Print|GetArray|PutArray|SortArray|CallFunction|ScanDir|CallDLL|Put|PutDString|PutCT|GetBits|PutBits|Include|Prev|Xmath|NameCRC|Codepage|Slog|Label|Reimport)\\b"
+				}
+			]
+		},
+		"keywords2": {
+			"patterns": [
+				{
+					"name": "keyword.other.quickbms",
+					"match": "(?i)\\b(STRING|BYTE|SHORT|THREEBYTE|LONG|LONGLONG|FLOAT|DOUBLE|LONGDOUBLE|VARIABLE|VARIABLE2|VARIABLE3|VARIABLE4|VARIABLE5|VARIANT|TIME|TIME64|CLSID|IPV4|IPV6|ASM|ASIZE|FILENAME|BASENAME|EXTENSION|UNICODE|BINARY|COMPRESSED|LINE|FULLNAME|CURRENT_FOLDER|FILE_FOLDER|BMS_FOLDER|OUTPUT_FOLDER|INPUT_FOLDER|ALLOC|u8|i8|u16|i16|u32|i32|u64|i64|int|uint|FILEPATH|FULLBASENAME|TO_UNICODE|TCC|variable6|variable7|unicode32|exe_folder|regex|prompt)\\b"
+				}
+			]
+		},
+		"strings": {
+			"name": "string.quoted.double.quickbms",
+			"begin": "\"",
+			"end": "\"",
+			"patterns": [
+				{
+					"name": "constant.character.escape.quickbms",
+					"match": "\\\\."
+				}
+			]
+		}
+	},
+	"scopeName": "source.quickbms"
+}
