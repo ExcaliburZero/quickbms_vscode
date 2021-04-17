@@ -5,6 +5,12 @@ This is a Visual Studio Code extension that provides support for the [QuickBMS s
 
 ![Example screenshot of the QuickBMS language syntax highlighting](images/syntax_highlighting_example_01.png)
 
+## Language Documentation
+Here are a few documentation links for QuickBMS and BMS (the language QuickBMS builds on).
+
+* QuickBMS documentation txt file - https://aluigi.altervista.org/papers/quickbms.txt
+* BMS/MexScript documentation wiki page - https://wiki.xentax.com/index.php/MexScript
+
 ## Development
 This is currently a small hobby project, so any PRs for fixes and improvements are welcome.
 
