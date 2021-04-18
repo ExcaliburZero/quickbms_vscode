@@ -1,6 +1,6 @@
 {
     "name": "quickbms",
-    "displayName": "quickbms",
+    "displayName": "QuickBMS",
     "description": "Adds language support for the QuickBMS scripting language.",
     "version": "0.0.1",
     "publisher": "ExcaliburZero",
