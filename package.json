@@ -2,7 +2,7 @@
     "name": "quickbms",
     "displayName": "QuickBMS",
     "description": "Adds language support for the QuickBMS scripting language.",
-    "version": "0.0.1",
+    "version": "0.0.2",
     "publisher": "ExcaliburZero",
     "license": "MIT",
     "repository": {
