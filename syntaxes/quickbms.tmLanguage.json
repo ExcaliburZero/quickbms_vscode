@@ -31,6 +31,21 @@
 		"comments": {
 			"patterns": [
 				{
+					"begin": "/\\*",
+					"beginCaptures": {
+						"0": {
+							"name": "punctuation.definition.comment.begin.quickbms"
+						}
+					},
+					"end": "\\*/",
+					"endCaptures": {
+						"0": {
+							"name": "punctuation.definition.comment.end.quickbms"
+						}
+					},
+					"name": "comment.block.quickbms"
+				},
+				{
 					"begin": "#",
 					"beginCaptures": {
 						"0": {
