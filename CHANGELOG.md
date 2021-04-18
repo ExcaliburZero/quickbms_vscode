@@ -7,6 +7,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 ### Added
 - Syntax highlighting for block comments.
+- Auto-closing pair logic for strings and square brackets (`""`, `[]`).
 
 ### Changed
 - Default line comment symbol from `//` to `#`.
