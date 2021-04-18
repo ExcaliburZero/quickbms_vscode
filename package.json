@@ -9,6 +9,9 @@
         "type": "git",
         "url": "https://github.com/ExcaliburZero/quickbms_vscode.git"
     },
+    "bugs": {
+        "url": "https://github.com/ExcaliburZero/quickbms_vscode/issues"
+    },
     "engines": {
         "vscode": "^1.55.0"
     },
