@@ -4,6 +4,7 @@
     "description": "QuickBMS",
     "version": "0.0.1",
     "publisher": "ExcaliburZero",
+    "license": "MIT",
     "repository": {
         "type": "git",
         "url": "https://github.com/ExcaliburZero/quickbms_vscode.git"
