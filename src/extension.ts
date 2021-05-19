@@ -60,8 +60,8 @@ export function deactivate(): Thenable<void> | undefined {
 }
 
 async function getServerExecutable(context: ExtensionContext, serverVersion: string): Promise<string> {
-    const executableName = `quickbms-lsp-${serverVersion}-${process.platform}`;
-    const executableUrl = "https://github.com/ExcaliburZero/quickbms-lsp/releases/download/0.1.0/quickbms-lsp";
+    const executableName = `quickbms-lsp-${serverVersion}-${getPlatformExecSuffix(process.platform)}`;
+    const executableUrl = `https://github.com/ExcaliburZero/quickbms-lsp/releases/download/${serverVersion}/quickbms-lsp-` + getPlatformExecSuffix(process.platform);
 
     const executablePath = path.join(context.globalStorageUri.path, executableName);
 
@@ -188,4 +188,17 @@ async function ignoreFileNotExists(err: NodeJS.ErrnoException): Promise<void> {
         return;
     }
     throw err;
+}
+
+function getPlatformExecSuffix(x: string): string | null {
+    switch (x) {
+        case 'darwin':
+            return 'macOS';
+        case 'linux':
+            return 'Linux';
+        case 'win32':
+            return 'Windows.exe';
+        default:
+            return null;
+    }
 }
