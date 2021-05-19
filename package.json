@@ -47,6 +47,12 @@
             "type": "object",
             "title": "quickbms",
             "properties": {
+                "quickbms.enableLanguageServer": {
+                    "title": "Enable Language Server",
+                    "description": "If true, uses the QuickBMS language server to offer language features. (ex. go to definition)",
+                    "type": "boolean",
+                    "default": true
+                },
                 "quickbms.languageServerVersion": {
                     "title": "Language Server Version",
                     "description": "The version number of the QuickBMS language server to use.",
