@@ -6,6 +6,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.1.0] - 2021-05-18
+### Added
+- Language server support (version 0.1.0).
+- Setting to enable/disable language server.
+- Setting to change language server version.
+
 ## [0.0.2] - 2021-04-18
 ### Added
 - Syntax highlighting for block comments.
