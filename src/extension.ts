@@ -28,7 +28,6 @@ export async function activate(context: ExtensionContext) {
         return;
     }
 
-    //let serverExecutable = path.join("/home", "chris", "Code", "quickbms-lsp", "target", "release", "quickbms-lsp");
     const serverVersion = "0.1.0";
     const serverExecutable = await getServerExecutable(context, serverVersion);
 
