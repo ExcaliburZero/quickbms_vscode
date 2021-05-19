@@ -21,6 +21,13 @@ export async function activate(context: ExtensionContext) {
         fs.mkdirSync((context.globalStorageUri.path));
     }
 
+    // Warn if on mac, since we don't support it yet
+    if (process.platform == "darwin") {
+        window.showInformationMessage("QuickBMS language server does not yet support Mac because of Rust cross-compiling difficulties.\nSee: https://github.com/ExcaliburZero/quickbms-lsp/issues/9");
+
+        return;
+    }
+
     //let serverExecutable = path.join("/home", "chris", "Code", "quickbms-lsp", "target", "release", "quickbms-lsp");
     const serverVersion = "0.1.0";
     const serverExecutable = await getServerExecutable(context, serverVersion);
