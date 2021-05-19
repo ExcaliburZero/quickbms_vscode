@@ -42,7 +42,19 @@
                 "scopeName": "source.quickbms",
                 "path": "./syntaxes/quickbms.tmLanguage.json"
             }
-        ]
+        ],
+        "configuration": {
+            "type": "object",
+            "title": "quickbms",
+            "properties": {
+                "quickbms.languageServerVersion": {
+                    "title": "Language Server Version",
+                    "description": "The version number of the QuickBMS language server to use.",
+                    "type": "string",
+                    "default": "0.1.0"
+                }
+            }
+        }
     },
     "dependencies": {
         "typescript": "^4.2.4",

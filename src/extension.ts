@@ -28,7 +28,7 @@ export async function activate(context: ExtensionContext) {
         return;
     }
 
-    const serverVersion = "0.1.0";
+    const serverVersion = workspace.getConfiguration("quickbms").languageServerVersion;
     const serverExecutable = await getServerExecutable(context, serverVersion);
 
     let serverOptions: ServerOptions = {
