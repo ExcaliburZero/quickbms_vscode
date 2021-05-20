@@ -58,6 +58,12 @@
                     "description": "The version number of the QuickBMS language server to use.",
                     "type": "string",
                     "default": "0.1.0"
+                },
+                "quickbms.languageServerBinary": {
+                    "title": "Language Server Binary",
+                    "description": "If not empty string, then uses the binary at that path for the langauge server.",
+                    "type": "string",
+                    "default": ""
                 }
             }
         }

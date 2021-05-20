@@ -28,15 +28,22 @@ export async function activate(context: ExtensionContext) {
 }
 
 async function runLanguageServer(context: ExtensionContext) {
-    // Warn if on mac, since we don't support it yet
-    if (process.platform == "darwin") {
-        window.showInformationMessage("QuickBMS language server does not yet support Mac because of Rust cross-compiling difficulties.\nSee: https://github.com/ExcaliburZero/quickbms-lsp/issues/9");
+    // Find or download the language server binary
+    let serverExecutable = "";
+    const languageServerBinary = workspace.getConfiguration("quickbms").languageServerBinary;
+    if (languageServerBinary != "") {
+        serverExecutable = languageServerBinary;
+    } else {
+        // Warn if on mac, since we don't support it yet
+        if (process.platform == "darwin") {
+            window.showInformationMessage("QuickBMS language server does not yet support Mac because of Rust cross-compiling difficulties.\nSee: https://github.com/ExcaliburZero/quickbms-lsp/issues/9");
 
-        return;
+            return;
+        }
+
+        const serverVersion = workspace.getConfiguration("quickbms").languageServerVersion;
+        serverExecutable = await getServerExecutable(context, serverVersion);
     }
-
-    const serverVersion = workspace.getConfiguration("quickbms").languageServerVersion;
-    const serverExecutable = await getServerExecutable(context, serverVersion);
 
     let serverOptions: ServerOptions = {
         run: { command: serverExecutable, args: [], options: null },
