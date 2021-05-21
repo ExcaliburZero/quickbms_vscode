@@ -16,9 +16,15 @@ import {
 let client: LanguageClient;
 
 export async function activate(context: ExtensionContext) {
+    // Note: We use the context.globalStoragePath even though it is deprecated, since
+    // the replacement globalStorageUri leads to issues when working with files on Windows
+    // (string contains drive and method calls also add drive)
+
     // Create the storage dir
-    if (!fs.existsSync(context.globalStorageUri.path)) {
-        fs.mkdirSync((context.globalStorageUri.path));
+    if (!fs.existsSync(context.globalStoragePath)) {
+        await fs.promises.mkdir(context.globalStoragePath).catch(err => {
+            window.showErrorMessage('Failed to create extension global storage directory.\n' + err);
+        });
     }
 
     // Start the language server
@@ -83,7 +89,7 @@ async function getServerExecutable(context: ExtensionContext, serverVersion: str
     const executableName = `quickbms-lsp-${serverVersion}-${getPlatformExecSuffix(process.platform)}`;
     const executableUrl = `https://github.com/ExcaliburZero/quickbms-lsp/releases/download/${serverVersion}/quickbms-lsp-` + getPlatformExecSuffix(process.platform);
 
-    const executablePath = path.join(context.globalStorageUri.path, executableName);
+    const executablePath = path.join(context.globalStoragePath, executableName);
 
     await downloadFile(`Downloading QuickBMS language server: ${executableName}`, executableUrl, executablePath);
 
