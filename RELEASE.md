@@ -1,3 +1,4 @@
+* Update `README.md`
 * Update the version number in `package.json`
 * Update `CHANGELOG.md`
 * Create a package file for the extension:
